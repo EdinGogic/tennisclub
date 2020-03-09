@@ -38,3 +38,6 @@ Route::post('/bookings/save', 'bookingController@store')->name('bookings.save');
 Route::get('/calendar/display', 'calendarController@display');
 
 Route::get('/calendar/json','CalendarController@json')->name('calendar.json');
+
+
+Route::resource('membershiptypes', 'membershiptypeController');

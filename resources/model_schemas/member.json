@@ -37,7 +37,7 @@
     },
     {
         "name": "membertype",
-        "dbType": "string,6:nullable",
+        "dbType": "string,30:nullable",
         "htmlType": "text",
         "validations": null,
         "searchable": true,
@@ -94,6 +94,10 @@
         "inForm": false,
         "inIndex": false,
         "inView": false
+    },
+    {
+        "type": "relation",
+        "relation": "mt1,Membershiptype,membertype"
     },
     {
         "type": "relation",

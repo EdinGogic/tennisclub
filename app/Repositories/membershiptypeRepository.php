@@ -2,25 +2,22 @@
 
 namespace App\Repositories;
 
-use App\Models\member;
+use App\Models\membershiptype;
 use App\Repositories\BaseRepository;
 
 /**
- * Class memberRepository
+ * Class membershiptypeRepository
  * @package App\Repositories
  * @version March 9, 2020, 2:51 pm UTC
 */
 
-class memberRepository extends BaseRepository
+class membershiptypeRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'firstname',
-        'surname',
-        'membertype',
-        'dateofbirth'
+        'courthourlyfee'
     ];
 
     /**
@@ -38,6 +35,6 @@ class memberRepository extends BaseRepository
      **/
     public function model()
     {
-        return member::class;
+        return membershiptype::class;
     }
 }

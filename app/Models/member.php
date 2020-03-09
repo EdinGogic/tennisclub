@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model as Model;
 /**
  * Class member
  * @package App\Models
- * @version February 3, 2020, 3:26 pm UTC
+ * @version March 9, 2020, 2:51 pm UTC
  *
+ * @property \App\Models\Membershiptype membertype
  * @property \Illuminate\Database\Eloquent\Collection bookings
  * @property string firstname
  * @property string surname
@@ -56,15 +57,18 @@ class member extends Model
     ];
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function membertype()
+    {
+        return $this->belongsTo(\App\Models\Membershiptype::class, 'membertype');
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
     public function bookings()
     {
         return $this->hasMany(\App\Models\Booking::class, 'memberid');
     }
-	
-	public function __toString()
-	{
-		return $this->firstname . " " . $this->surname;
-	}
 }
