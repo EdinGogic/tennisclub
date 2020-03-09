@@ -39,5 +39,6 @@ Route::get('/calendar/display', 'calendarController@display');
 
 Route::get('/calendar/json','CalendarController@json')->name('calendar.json');
 
+Route::get('/loggedInMember','memberController@getLoggedInMemberDetails');
 
 Route::resource('membershiptypes', 'membershiptypeController');
